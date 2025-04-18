@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Semangat untuk Talita</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .welcome, .card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      max-width: 460px;
+      display: none;
+    }
+
+    .welcome.active, .card.active {
+      display: block;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .arabic {
+      font-size: 20px;
+      color: #222;
+      direction: rtl;
+      font-family: 'Amiri', serif;
+      margin-top: 10px;
+    }
+
+    .translation {
+      font-size: 14px;
+      color: #555;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .cat-image {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="welcome active" id="welcomeBox">
+    <h1>HALO TALITA🥳</h1>
+    <p>Semoga harimu menyenangkan!</p>
+    <button onclick="goToCard()">Masuk</button>
+  </div>
+
+  <div class="card" id="mainCard">
+    <img src="https://img.freepik.com/free-vector/cute-cat-cartoon-character_1308-132991.jpg" alt="Kucing Lucu" class="cat-image">
+    <h1>Semoga Cepat Sembuh!</h1>
+    <p>Istirahat yang cukup dan tetap semangat, ya. Kami semua kangen senyumanmu!</p>
+    <button onclick="showMessage()">Iya</button>
+    <div id="extra-message" style="display: none;">
+      <p>Kamu kuat, kamu hebat. Allah tidak akan menguji di luar batas kemampuanmu.</p>
+      <p class="arabic">أسْأَلُ اللهَ العَظِيمَ رَبَّ العَرْشِ العَظِيمِ أَنْ يَشْفِيَكَ</p>
+      <p class="translation">(As'alullāhal 'azhīma rabbal 'arsyil 'azhīmi an yasyfiyaka)</p>
+      <p class="translation">Artinya: Aku memohon kepada Allah Yang Maha Agung, Tuhan ‘Arsy yang agung agar menyembuhkanmu.</p>
+    </div>
+  </div>
+
+  <script>
+    function goToCard() {
+      document.getElementById("welcomeBox").classList.remove("active");
+      document.getElementById("mainCard").classList.add("active");
+    }
+
+    function showMessage() {
+      document.getElementById("extra-message").style.display = "block";
+    }
+  </script>
+</body>
+</html>
